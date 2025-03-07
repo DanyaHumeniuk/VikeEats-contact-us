@@ -42,7 +42,7 @@ const App = () => {
             </p>
 
             <div className="py-5 ">
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-lg flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-lg flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faDiscord} className="text-xl" />
                 Join Our Discord!
               </button>
@@ -60,23 +60,23 @@ const App = () => {
               VikeEats is a University of Victoria project that offers an interactive map of campus dining options, including cafeterias and restaurants. It highlights the sorts of foods offered at each restaurant, such as gluten-free, dairy-free, vegetarian, and vegan alternatives, allowing students and guests to make more educated dining choices.
             </p>
             <div className="flex py-5 justify-start gap-4">
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out rounded-3xl">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out rounded-3xl">
                 <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
 
               </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faGithub} className="text-xl" />
 
               </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
 
               </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faInstagram} className="text-xl" />
 
               </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:text-primary-light transition duration-300 ease-in-out">
+              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faYoutube} className="text-xl" />
 
               </button>
