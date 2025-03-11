@@ -11,7 +11,7 @@ const App = () => {
 
   return (
 
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center p-6 lg:fixed">
+    <div className="bg-white min-h-screen flex flex-col items-center p-6 lg:fixed">
       {/* Navbar */}
       <nav className="navbar">
         <h1 className="logo">Vike<span className="text-gray-600">Eats</span></h1>
@@ -31,7 +31,7 @@ const App = () => {
 
       <div className="max-w-[100%] w-full flex flex-col lg:flex-row justify-between items-start gap-12 mt-12 px-6 lg:px-20 pb-20">
         {/* Left Section: Info */}
-        <div className="text-primary-dark w-full lg:w-3/5 bg-white p-16 rounded-lg shadow-md lg:min-h-[700px] py-18">
+        <div className="text-primary-dark w-full lg:w-3/5 bg-white p-16 rounded-lg lg:min-h-[700px] py-18 sm:shadow-dark sm:shadow-gray-200 lg:shadow-none">
 
           {/* About VikeLabs */}
           <section className="mt-2">
@@ -42,10 +42,18 @@ const App = () => {
             </p>
 
             <div className="py-5 ">
+            <a
+              href="https://discord.gg/ZYfGSJ78"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
               <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-lg flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faDiscord} className="text-xl" />
                 Join Our Discord!
               </button>
+
+            </a>
 
             </div>
 
@@ -60,33 +68,67 @@ const App = () => {
               VikeEats is a University of Victoria project that offers an interactive map of campus dining options, including cafeterias and restaurants. It highlights the sorts of foods offered at each restaurant, such as gluten-free, dairy-free, vegetarian, and vegan alternatives, allowing students and guests to make more educated dining choices.
             </p>
             <div className="flex py-5 justify-start gap-4">
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out rounded-3xl">
-                <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
-
-              </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
+              
+              <a href="mailto:vikelab@gmail.com" className="inline-block">
+                <button className="text-primary-dark mt-4 bg-gray-200 p-3 flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out rounded-3xl">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
+                </button>
+              </a>
+              
+              <a
+                href="https://github.com/VikeLabs/VikeEats"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faGithub} className="text-xl" />
 
-              </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
+                </button>
+
+              </a>
+              
+              <a
+                href="https://www.linkedin.com/company/vikelabs/?originalSubdomain=ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
 
-              </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
+                </button>
+
+              </a>
+              
+              <a
+                href="https://www.instagram.com/vikelabs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
                 <FontAwesomeIcon icon={faInstagram} className="text-xl" />
+                </button>
+              </a>
 
-              </button>
-              <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
-                <FontAwesomeIcon icon={faYoutube} className="text-xl" />
-
-              </button>
+              <a
+                href="https://www.youtube.com/channel/UCKAAXo4bqb034PZYR6ZhpQw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <button className="text-primary-dark mt-4 bg-gray-200 p-3 rounded-3xl flex items-center gap-2 hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
+                <FontAwesomeIcon icon={faYoutube} className="text-xl" /></button>
+              </a>
+              
             </div>
 
           </section>
         </div>
 
         {/* Right Section: Contact Form */}
-        <div className="text-primary-dark w-full lg:w-2/5 bg-white p-10 lg:p-12 rounded-lg shadow-md flex flex-col justify-between lg:min-h-[700px]">
+        <div className="text-primary-dark w-full lg:w-2/5 bg-white p-10 lg:p-12 rounded-lg shadow-dark shadow-gray-200 flex flex-col justify-between lg:min-h-[700px]">
           <form className="flex flex-col flex-grow">
             <label className="block font-semibold">Name</label>
             <input type="text" className="w-full p-3 border rounded mt-1" placeholder="Enter your name" />
