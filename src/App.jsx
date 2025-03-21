@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "/src/Navbar.css";
 import "./first-level-filter.css";
+import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faGithub, faLinkedin, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +9,33 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 
 const App = () => {
+
+  const form = useRef();
+  const [status, setStatus] = useState("");
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setStatus("Sending..."); // Display loading message
+
+    emailjs.init("your_correct_public_key"); // ✅ Initialize EmailJS
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_4rpjqlh",  // ✅ Your EmailJS Service ID
+        "template_9ywy7aw", // ✅ Your EmailJS Template ID
+        form.current,
+        "hIojCZUZcoXSb386o" // ✅ Your EmailJS Public Key
+      );
+
+      console.log("✅ Email Sent Successfully:", result);
+      setStatus("✅ Message sent successfully!");
+      form.current.reset(); // Clear form fields
+
+    } catch (error) {
+      console.error("❌ EmailJS Error:", error);
+      setStatus(`❌ Failed to send message: ${error.text || "Unknown error"}`);
+    }
+  };
 
   return (
 
@@ -129,20 +157,25 @@ const App = () => {
 
         {/* Right Section: Contact Form */}
         <div className="text-primary-dark w-full lg:w-2/5 bg-white p-10 lg:p-12 rounded-lg shadow-dark shadow-gray-200 flex flex-col justify-between lg:min-h-[700px]">
-          <form className="flex flex-col flex-grow">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col flex-grow">
+            
             <label className="block font-semibold">Name</label>
-            <input type="text" className="w-full p-3 border rounded mt-1" placeholder="Enter your name" />
+            <input type="text" name="name" className="w-full p-3 border rounded mt-1" placeholder="Enter your name" required />
 
             <label className="block font-semibold mt-4">Surname</label>
-            <input type="text" className="w-full p-3 border rounded mt-1" placeholder="Enter your surname" />
+            <input type="text" name="surname" className="w-full p-3 border rounded mt-1" placeholder="Enter your surname" required />
 
             <label className="block font-semibold mt-4">Email</label>
-            <input type="email" className="w-full p-3 border rounded mt-1" placeholder="Enter your email" />
+            <input type="email" name="email" className="w-full p-3 border rounded mt-1" placeholder="Enter your email" required />
 
             <label className="block font-semibold mt-4">Message</label>
-            <textarea className="w-full p-3 border rounded mt-1 flex-grow min-h-[200px]" placeholder="Enter your message"></textarea>
+            <textarea name="message" className="w-full p-3 border rounded mt-1 flex-grow min-h-[200px]" placeholder="Enter your message" required></textarea>
 
-            <button className="w-full bg-gray-900 text-white p-3 mt-4 rounded hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">Submit</button>
+            <button type="submit" className="w-full bg-gray-900 text-white p-3 mt-4 rounded hover:bg-primary-light hover:text-white transition duration-300 ease-in-out">
+              Submit
+            </button>
+
+            {status && <p className="mt-4 text-sm text-gray-700">{status}</p>}
           </form>
         </div>
       </div>
