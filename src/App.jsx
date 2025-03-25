@@ -15,25 +15,25 @@ const App = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    setStatus("Sending..."); // Display loading message
+    setStatus("Sending..."); 
 
-    emailjs.init("your_correct_public_key"); // ✅ Initialize EmailJS
+    emailjs.init("your_correct_public_key"); 
 
     try {
       const result = await emailjs.sendForm(
-        "service_4rpjqlh",  // ✅ Your EmailJS Service ID
-        "template_9ywy7aw", // ✅ Your EmailJS Template ID
+        "service_4rpjqlh",  
+        "template_9ywy7aw", 
         form.current,
-        "hIojCZUZcoXSb386o" // ✅ Your EmailJS Public Key
+        "hIojCZUZcoXSb386o"
       );
 
-      console.log("✅ Email Sent Successfully:", result);
-      setStatus("✅ Message sent successfully!");
-      form.current.reset(); // Clear form fields
+      console.log("Email Sent Successfully:", result);
+      setStatus("Message sent successfully!");
+      form.current.reset(); 
 
     } catch (error) {
-      console.error("❌ EmailJS Error:", error);
-      setStatus(`❌ Failed to send message: ${error.text || "Unknown error"}`);
+      console.error("EmailJS Error:", error);
+      setStatus(`Failed to send message: ${error.text || "Unknown error"}`);
     }
   };
 
